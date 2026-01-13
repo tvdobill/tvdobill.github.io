@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark" />
+  <title>TV DO BILL</title>
+  <style>
+    body{
+      margin:0;
+      font-family: Arial, sans-serif;
+      background:#000;
+      color:#fff;
+      overflow:hidden; /* sem barra de rolagem */
+    }
+
+    header{
+      text-align:center;
+      padding:10px;
+    }
+    header h1{
+      font-size:22px;
+      margin:8px 0;
+    }
+
+    .grid{
+      display:flex;
+      justify-content:center;
+      align-items:stretch;
+      gap:16px;
+      padding:12px;
+      box-sizing:border-box;
+      flex-wrap: wrap;
+    }
+
+    .card{
+      flex:1;
+      max-width:300px; /* largura máxima de cada card */
+      background:#111;
+      border-radius:12px;
+      overflow:hidden;
+      text-align:center;
+      font-size:14px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+    }
+
+    .card img{
+      width:100%;
+      height:80px;
+      object-fit:contain;
+      padding:10px;
+      box-sizing:border-box;
+    }
+
+    .card h2{
+      margin:8px 0 4px;
+      font-size:16px;
+    }
+
+    .card p{
+      margin:4px 0 10px;
+      font-size:13px;
+      color:#bbb;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:6px 10px;
+      margin:4px 0;
+      background:#00d4ff;
+      color:#000;
+      font-weight:bold;
+      text-decoration:none;
+      border-radius:8px;
+      font-size:14px;
+    }
+
+    .link-download{
+      display:block;
+      margin-top:6px;
+      font-size:12px;
+      color:#ccc;
+      text-decoration:none;
+    }
+    .link-download:hover{text-decoration:underline}
+
+    .app-cta{
+      margin:10px;
+      text-align:center;
+      padding:10px;
+      border:1px dashed #333;
+      border-radius:10px;
+      background:#111;
+      font-size:14px;
+    }
+    .app-cta a{
+      display:inline-block;
+      margin-top:8px;
+      padding:8px 14px;
+      background:#7c4dff;
+      color:#fff;
+      border-radius:8px;
+      font-size:14px;
+      text-decoration:none;
+    }
+
+    .iptv-info{
+      margin:15px auto;
+      padding:12px;
+      max-width:600px;
+      text-align:center;
+      font-size:15px;
+      background:#111;
+      border:1px solid #333;
+      border-radius:10px;
+      color:#00d4ff;
+      font-weight:bold;
+    }
+    .iptv-info a{
+      color:#00d4ff;
+      text-decoration:none;
+    }
+    .iptv-info a:hover{text-decoration:underline}
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://www.startpage.com/av/proxy-image?piurl=https%3A%2F%2Fpng.pngtree.com%2Fpng-clipart%2F20220628%2Foriginal%2Fpngtree-tv-logo-design-flat-icon-illustration-design-png-image_8256689.png&sp=1756833858T5b60b822860eeebce678334ef9ccb4943df756dce9922ea378fd4656511be0ef" alt="logo" style="height:40px;border-radius:6px;vertical-align:middle;">
+    <h1>TV DO BILL</h1>
+  </header>
+
+  <div class="grid">
+    <div class="card">
+      <img src="https://i.ytimg.com/vi/g1Qau6PT4Wk/maxresdefault.jpg" alt="Servidor 1">
+      <h2>Servidor 1</h2>
+      <p>Acesse a lista principal de canais via servidor 1.</p>
+      <a class="btn" href="https://listadobill.github.io/tv/servidor1">Abrir Servidor 1</a>
+      <a href="#" class="link-download" onclick="return downloadSource('https://listadobill.github.io/tv/servidor1','servidor1.html')">Para assistir no computador clique aqui</a>
+    </div>
+
+    <div class="card">
+      <img src="https://www.publicdomainpictures.net/pictures/190000/velka/grunge-flag-of-brazil-state.jpg" alt="Canais WEB Brasileiros">
+      <h2>Canais WEB Brasileiros</h2>
+      <p>Coleção de canais focados no Brasil.</p>
+      <a class="btn" href="https://listadobill.github.io/tv/brasil">Abrir Canais WEB</a>
+      <a href="#" class="link-download" onclick="return downloadSource('https://listadobill.github.io/tv/brasil','canais-web-brasileiros.html')">Para assistir no computador clique aqui</a>
+    </div>
+
+    <!-- Card Santa Catarina -->
+    <div class="card">
+      <img src="https://aimore.org/brasil/Santa_Catarina.jpg" alt="Canais de Santa Catarina">
+      <h2>Canais de Santa Catarina</h2>
+      <p>Lista exclusiva de canais de SC.</p>
+      <a class="btn" href="https://listadobill.github.io/tv/sc">Abrir SC</a>
+      <a href="#" class="link-download" onclick="return downloadSource('https://listadobill.github.io/tv/sc','canais-sc.html')">Para assistir no computador clique aqui</a>
+    </div>
+  </div>
+
+  <!-- Informação IPTV -->
+  <div class="iptv-info">
+    Lista para APP IPTV: <a href="https://bit.ly/bill-iptv" target="_blank">https://bit.ly/bill-iptv</a>
+  </div>
+
+  <div class="app-cta">
+    <div>Quer assistir no Android com app leve?</div>
+    <a href="https://drive.google.com/file/d/1uVNYvaBjf6YI1pS48WQ2W_XoMTgM3CYq/view?usp=sharing">Baixe o APP DO BILL para Android</a>
+  </div>
+
+  <script>
+    function downloadSource(url, filename){
+      try {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', url, false);
+        xhr.send();
+        
+        if (xhr.status === 200) {
+          var text = xhr.responseText;
+          var blob = new Blob([text], {type:'text/html;charset=utf-8'});
+          triggerDownload(blob, filename);
+        } else {
+          throw new Error('HTTP '+xhr.status);
+        }
+      } catch(err) {
+        var safeUrl = url.replace(/\"/g,'&quot;');
+        var fallback = '<!DOCTYPE html><html><head><meta charset=\"UTF-8\">'+
+          '<meta http-equiv=\"refresh\" content=\"0;url='+safeUrl+'\"></head>'+
+          '<body><p>Abrindo <a href=\"'+safeUrl+'\">'+safeUrl+'</a>...</p></body></html>';
+        var blob = new Blob([fallback], {type:'text/html;charset=utf-8'});
+        triggerDownload(blob, filename);
+      }
+      return false;
+    }
+
+    function triggerDownload(blob, filename){
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      setTimeout(function(){
+        document.body.removeChild(a);
+        URL.revokeObjectURL(a.href);
+      }, 100);
+    }
+  </script>
+</body>
+</html>
